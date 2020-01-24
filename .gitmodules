@@ -1,0 +1,6 @@
+[submodule "mbedtls"]
+	path = mbedtls
+	url = https://github.com/ARMmbed/mbedtls
+[submodule "QCBOR"]
+	path = QCBOR
+	url = https://github.com/laurencelundblade/QCBOR
