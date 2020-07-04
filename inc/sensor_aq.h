@@ -268,8 +268,14 @@ static int sensor_aq_flush_buffer(sensor_aq_ctx *ctx) {
  *
  * @returns Status code (0 = OK, -60xx error from aq_init, positive number is error from QCBOR)
  */
-int sensor_aq_init(sensor_aq_ctx *ctx, sensor_aq_payload_info *payload_info, EI_SENSOR_AQ_STREAM *stream, bool allow_empty_stream = false) {
-    if (ctx == NULL) {
+int sensor_aq_init(sensor_aq_ctx *ctx, sensor_aq_payload_info *payload_info, EI_SENSOR_AQ_STREAM *stream,
+#ifdef __cplusplus
+    bool allow_empty_stream = false
+#else
+    bool allow_empty_stream
+#endif
+) { 
+   if (ctx == NULL) {
         return AQ_CTX_IS_NULL;
     }
     if (payload_info == NULL) {

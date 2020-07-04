@@ -74,7 +74,7 @@ int main() {
     // Initialize the context, this verifies that all requirements are present
     // it also writes the initial CBOR structure
     int res;
-    res = sensor_aq_init(&ctx, &payload, file);
+    res = sensor_aq_init(&ctx, &payload, file, false);
     if (res != AQ_OK) {
         printf("sensor_aq_init failed (%d)\n", res);
         return 1;
