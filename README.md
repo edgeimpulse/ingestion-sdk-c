@@ -65,7 +65,7 @@ To validate the signature in the message:
 
 1. This prints the message, whether the signature was valid, and the payload:
 
-    ```json
+    ```
     Full object {
       protected: { ver: 'v1', alg: 'HS256' },
       signature: 'f0bc94ee616f902a5dbce2a32f3946873831a746b8019bb3b3eb0850a9b17048',
