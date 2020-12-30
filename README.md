@@ -25,6 +25,8 @@ This library depends on QCBOR and (optionally) Mbed TLS. These are pulled in thr
 
 To build an example application which can encode data that runs on your computer:
 
+### MacOS, Linux
+
 1. Import the repository and its submodules.
 1. Compile the application (see [test/main.c](test/main.c) for the code):
 
@@ -40,7 +42,30 @@ To build an example application which can encode data that runs on your computer
 
     This prints the encoded message both to stdout, and creates a file called `test/encoded.cbor` with the same content.
 
-1. Copy the content after 'Encoded file:'.
+### Windows
+
+To build an example application which can encode data that runs on your computer:
+
+1. Import the repository and its submodules.
+1. Install [MinGW-W64](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe/download) and install according to [these instructions](https://tls.mbed.org/kb/compiling-and-building/compiling-mbedtls-in-mingw).
+    * Make sure that `mingw32-make` and `gcc` are in your PATH.
+1. Compile the application (see [test/main.c](test/main.c) for the code):
+
+    ```
+    $ mingw32-make CC=gcc
+    ```
+
+1. Run the application:
+
+    ```
+    $ ingestion-sdk-example.exe
+    ```
+
+    This prints the encoded message both to stdout, and creates a file called `test/encoded.cbor` with the same content.
+
+### Viewing the payload
+
+1. After running the binary above, copy the content after 'Encoded file:'.
 1. Go [cbor.me](http://cbor.me), paste the content in the 'Bytes' text box (the right one), then click the green arrow next to 'Bytes'. You now see the decoded message:
 
     ![Decoded message in cbor.me](img/cborme.png)

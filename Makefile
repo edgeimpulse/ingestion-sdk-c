@@ -7,6 +7,10 @@ MACROS += -DEI_SENSOR_AQ_STREAM=FILE
 CFLAGS += -I. -Imbedtls/include -Imbedtls/crypto/include -IQCBOR/inc -IQCBOR/src -Iinc -Iinc/signing
 LIB_CFILES += QCBOR/src/*.c mbedtls/library/*.c
 
+ifeq ($(OS),Windows_NT)
+	LDFLAGS += -lws2_32
+endif
+
 all: build
 
 .PHONY: build clean
