@@ -16,7 +16,7 @@ all: build
 .PHONY: build clean
 
 build:
-	$(CC) $(MACROS) $(CFLAGS) test/main.c $(LIB_CFILES) -o $(NAME)
+	$(CC) $(MACROS) $(CFLAGS) test/main.c $(LIB_CFILES) $(LDFLAGS) -o $(NAME)
 
 clean:
 	rm $(NAME)
