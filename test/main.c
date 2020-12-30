@@ -69,7 +69,7 @@ int main() {
 
     // Place to write our data.
     // The library streams data, and does not cache everything in buffers
-    FILE *file = fopen("test/encoded.cbor", "w+");
+    FILE *file = fopen("test/encoded.cbor", "wb+");
 
     // Initialize the context, this verifies that all requirements are present
     // it also writes the initial CBOR structure
